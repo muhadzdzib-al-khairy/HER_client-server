@@ -1,0 +1,5 @@
+com\uts\pegawai\service\service\PegawaiService.class
+com\uts\pegawai\service\PegawaiServiceApplication.class
+com\uts\pegawai\service\repository\PegawaiRepository.class
+com\uts\pegawai\service\controller\PegawaiController.class
+com\uts\pegawai\service\entity\Pegawai.class
