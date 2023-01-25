@@ -1,10 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package com.khairy.client_2101082010;
 
 import com.khairy.client_2101082010.controller.PengembalianController;
+import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
@@ -15,7 +12,7 @@ import javax.swing.JTextField;
 public class FormPengembalian extends javax.swing.JFrame {
 
     /**
-     * Creates new form FormPengembalian
+     * Creates new form FormPeminjaman
      */
     PengembalianController controller;
     public FormPengembalian() {
@@ -23,6 +20,10 @@ public class FormPengembalian extends javax.swing.JFrame {
         controller = new PengembalianController(this);
         controller.bersihForm();
         controller.viewTabel();
+    }
+
+    public JButton getBtnCari() {
+        return btnCari;
     }
 
     public JTable getTablePengembalian() {
@@ -33,24 +34,71 @@ public class FormPengembalian extends javax.swing.JFrame {
         return txtDenda;
     }
 
-    public JTextField getTxtIdPeminjaman() {
-        return txtIdPeminjaman;
+    public JTextField getTxtPeminjamanId() {
+        return txtPeminjamanId;
     }
 
-    public JTextField getTxtIdPengembalian() {
-        return txtIdPengembalian;
-    }
-
-    public JTextField getTxtKembalikan() {
-        return txtKembalikan;
+    public JTextField getTxtPengembalianId() {
+        return txtPengembalianId;
     }
 
     public JTextField getTxtTerlambat() {
         return txtTerlambat;
     }
+
+    public JTextField getTxtTglDikembalikan() {
+        return txtTglDikembalikan;
+    }
+
+    public void setBtnCancel(JButton btnCancel) {
+        this.btnCancel = btnCancel;
+    }
+
+    public void setBtnCari(JButton btnCari) {
+        this.btnCari = btnCari;
+    }
+
+    public void setBtnDelete(JButton btnDelete) {
+        this.btnDelete = btnDelete;
+    }
+
+    public void setBtnSave(JButton btnSave) {
+        this.btnSave = btnSave;
+    }
+
+    public void setBtnUpdate(JButton btnUpdate) {
+        this.btnUpdate = btnUpdate;
+    }
+
+    public void setTablePengembalian(JTable tablePengembalian) {
+        this.tablePengembalian = tablePengembalian;
+    }
+
+    public void setTxtDenda(JTextField txtDenda) {
+        this.txtDenda = txtDenda;
+    }
+
+    public void setTxtPeminjamanId(JTextField txtPeminjamanId) {
+        this.txtPeminjamanId = txtPeminjamanId;
+    }
+
+    public void setTxtPengembalianId(JTextField txtPengembalianId) {
+        this.txtPengembalianId = txtPengembalianId;
+    }
+
+    public void setTxtTerlambat(JTextField txtTerlambat) {
+        this.txtTerlambat = txtTerlambat;
+    }
+
+    public void setTxtTglDikembalikan(JTextField txtTglDikembalikan) {
+        this.txtTglDikembalikan = txtTglDikembalikan;
+    }
     
     
 
+   
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -61,83 +109,62 @@ public class FormPengembalian extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        txtPengembalianId = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        txtPeminjamanId = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        txtTglDikembalikan = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        txtIdPengembalian = new javax.swing.JTextField();
-        txtIdPeminjaman = new javax.swing.JTextField();
-        txtKembalikan = new javax.swing.JTextField();
         txtTerlambat = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
         txtDenda = new javax.swing.JTextField();
-        btnCari = new javax.swing.JButton();
-        btnSimpan = new javax.swing.JButton();
+        btnSave = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablePengembalian = new javax.swing.JTable();
+        btnCari = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
+        setTitle("Form Peminjaman");
 
-        jLabel1.setText("Id Pengembalian");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(20, 20, 100, 16);
+        jLabel1.setText("ID Pengembalian");
 
-        jLabel2.setText("Id Peminjaman");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(20, 50, 100, 16);
+        txtPengembalianId.setText("jTextField1");
 
-        jLabel3.setText("Tgl di Kembalikan");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(20, 80, 110, 16);
+        jLabel2.setText("ID Peminjaman");
+
+        txtPeminjamanId.setText("jTextField2");
+        txtPeminjamanId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPeminjamanIdActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Tanggal dikembalikan");
+
+        txtTglDikembalikan.setText("jTextField3");
 
         jLabel4.setText("Terlambat");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(20, 110, 90, 16);
-
-        jLabel5.setText("Denda");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(20, 140, 100, 16);
-
-        txtIdPengembalian.setText("jTextField1");
-        getContentPane().add(txtIdPengembalian);
-        txtIdPengembalian.setBounds(140, 20, 250, 22);
-
-        txtIdPeminjaman.setText("jTextField2");
-        getContentPane().add(txtIdPeminjaman);
-        txtIdPeminjaman.setBounds(140, 50, 330, 22);
-
-        txtKembalikan.setText("jTextField3");
-        getContentPane().add(txtKembalikan);
-        txtKembalikan.setBounds(140, 80, 330, 22);
 
         txtTerlambat.setText("jTextField4");
-        getContentPane().add(txtTerlambat);
-        txtTerlambat.setBounds(140, 110, 330, 22);
+
+        jLabel5.setText("Denda");
 
         txtDenda.setText("jTextField5");
-        getContentPane().add(txtDenda);
-        txtDenda.setBounds(140, 140, 330, 22);
-
-        btnCari.setText("Cari");
-        btnCari.addActionListener(new java.awt.event.ActionListener() {
+        txtDenda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCariActionPerformed(evt);
+                txtDendaActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCari);
-        btnCari.setBounds(400, 20, 72, 22);
 
-        btnSimpan.setText("Simpan");
-        btnSimpan.addActionListener(new java.awt.event.ActionListener() {
+        btnSave.setText("Save");
+        btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSimpanActionPerformed(evt);
+                btnSaveActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSimpan);
-        btnSimpan.setBounds(20, 190, 72, 22);
 
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -145,8 +172,6 @@ public class FormPengembalian extends javax.swing.JFrame {
                 btnUpdateActionPerformed(evt);
             }
         });
-        getContentPane().add(btnUpdate);
-        btnUpdate.setBounds(120, 190, 72, 22);
 
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -154,8 +179,6 @@ public class FormPengembalian extends javax.swing.JFrame {
                 btnDeleteActionPerformed(evt);
             }
         });
-        getContentPane().add(btnDelete);
-        btnDelete.setBounds(220, 190, 72, 22);
 
         btnCancel.setText("Cancel");
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
@@ -163,51 +186,152 @@ public class FormPengembalian extends javax.swing.JFrame {
                 btnCancelActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCancel);
-        btnCancel.setBounds(320, 190, 72, 22);
 
         tablePengembalian.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Id Pengembalian", "Id Peminjaman", "Tgl di Kembalikan", "Terlambat", "Denda"
+                "ID Pengembalian", "ID Peminjaman", "ID Tgl Dikembalikan", "Terlambat", "Denda"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tablePengembalian);
 
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(20, 230, 480, 220);
+        btnCari.setText("Cari");
+        btnCari.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCariActionPerformed(evt);
+            }
+        });
 
-        setSize(new java.awt.Dimension(591, 494));
-        setLocationRelativeTo(null);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnSave)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnUpdate))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)))
+                .addGap(1, 1, 1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(btnDelete)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnCancel)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtPeminjamanId)
+                            .addComponent(txtTglDikembalikan)
+                            .addComponent(txtTerlambat)
+                            .addComponent(txtDenda)
+                            .addComponent(txtPengembalianId))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCari)))
+                .addGap(20, 20, 20))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(txtPengembalianId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(btnCari)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtPeminjamanId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtTglDikembalikan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtTerlambat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(txtDenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCancel)
+                    .addComponent(btnDelete)
+                    .addComponent(btnUpdate)
+                    .addComponent(btnSave))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCariActionPerformed
+        // TODO add your handling code here:
         controller.getPengembalianId();
     }//GEN-LAST:event_btnCariActionPerformed
 
-    private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
+    private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+        // TODO add your handling code here:
         controller.savePengembalian();
         controller.viewTabel();
         controller.bersihForm();
-    }//GEN-LAST:event_btnSimpanActionPerformed
+    }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
-        controller.updatePengembalian();
+        // TODO add your handling code here:
+        controller.UpdatePengembalian();
         controller.viewTabel();
         controller.bersihForm();
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        // TODO add your handling code here:
         controller.deletePengembalian();
         controller.viewTabel();
         controller.bersihForm();
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        // TODO add your handling code here:
         controller.bersihForm();
     }//GEN-LAST:event_btnCancelActionPerformed
+
+    private void txtPeminjamanIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPeminjamanIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPeminjamanIdActionPerformed
+
+    private void txtDendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDendaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDendaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -235,6 +359,13 @@ public class FormPengembalian extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(FormPengembalian.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -248,7 +379,7 @@ public class FormPengembalian extends javax.swing.JFrame {
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnCari;
     private javax.swing.JButton btnDelete;
-    private javax.swing.JButton btnSimpan;
+    private javax.swing.JButton btnSave;
     private javax.swing.JButton btnUpdate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -258,21 +389,9 @@ public class FormPengembalian extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tablePengembalian;
     private javax.swing.JTextField txtDenda;
-    private javax.swing.JTextField txtIdPeminjaman;
-    private javax.swing.JTextField txtIdPengembalian;
-    private javax.swing.JTextField txtKembalikan;
+    private javax.swing.JTextField txtPeminjamanId;
+    private javax.swing.JTextField txtPengembalianId;
     private javax.swing.JTextField txtTerlambat;
+    private javax.swing.JTextField txtTglDikembalikan;
     // End of variables declaration//GEN-END:variables
-
-    public Object getTxtPengembalianId() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public Object getTxtPeminjamanId() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public Object getTabelPengembalian() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }
